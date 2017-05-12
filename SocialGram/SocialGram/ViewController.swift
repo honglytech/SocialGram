@@ -11,9 +11,12 @@ import Parse
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    // Spinner variable shows the app is still processing
+    var activityIndicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var imageView: UIImageView!
     
-    
+    /*
     // Get the image to Image View
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -29,10 +32,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Closes Image Picker Controller
         self.dismiss(animated: true, completion: nil)
     }
-    
+    */
+     
     // Get image from Camera Roll
     @IBAction func importImage(_ sender: UIButton) {
         
+        /*
         let imagePickerController = UIImagePickerController()
         
         imagePickerController.delegate = self
@@ -45,11 +50,69 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         // Nothing happens when image is presented
         self.present(imagePickerController, animated: true, completion: nil)
+        */
+    }
+    
+    // Alert function
+    @IBAction func alert(_ sender: UIButton) {
         
+        // Control and display alert on the screen
+        let alertController = UIAlertController(title: "Hi", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            
+            print("button pressed")
+            
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+            
+            print("No button pressed")
+            
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        // Displays the alert
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // Pause app function using Spinner
+    @IBAction func pause(_ sender: UIButton) {
+        
+        // Set CG Rectangle to 50px of width and height
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        
+        // Location
+        activityIndicator.center = self.view.center
+        
+        // Hides indicator when it is stopped
+        activityIndicator.hidesWhenStopped = true
+        
+        // Indicator style with gray color
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        
+        // Add new view to existing View Controller
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
+        // Stop other activities or user interact in the app
+        //UIApplication.shared.beginIgnoringInteractionEvents()
         
         
     }
     
+    // Stop Indicator function
+    @IBAction func restore(_ sender: UIButton) {
+        activityIndicator.stopAnimating()
+        
+        // Enable user interaction to use the app again
+        //UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
