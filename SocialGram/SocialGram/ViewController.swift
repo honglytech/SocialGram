@@ -29,7 +29,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var switchSingupMode: UIButton!
     
     // Alert function
-    func Alert(title: String, message: String) {
+    func alert(title: String, message: String) {
         
         // Control alert on the screen
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Check if email or password is empty
         if emailTextField.text == "" || passwordTextField.text == "" {
             
-            Alert(title: "Form error!", message: "Please enter an email and password")
+            alert(title: "Form error!", message: "Please enter an email and password")
             
         } else {
             
@@ -110,7 +110,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                             
                         }
                         
-                        self.Alert(title: "Signup Error", message: displayErrorMessage)
+                        self.alert(title: "Signup Error", message: displayErrorMessage)
                         
                     } else {
                         
@@ -148,7 +148,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         if let errorMessage = error?.userInfo["error"] as? String {
                             displayErrorMessage = errorMessage
                         }
-                        self.Alert(title: "Login Error", message: displayErrorMessage)
+                        self.alert(title: "Login Error", message: displayErrorMessage)
         
                     } else {
                         

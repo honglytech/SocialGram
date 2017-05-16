@@ -13,6 +13,7 @@
 		711CCF0A1EB2F70000A24E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 711CCF091EB2F70000A24E85 /* Assets.xcassets */; };
 		711CCF0D1EB2F70000A24E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711CCF0B1EB2F70000A24E85 /* LaunchScreen.storyboard */; };
 		7154D0DC1EC98D7A00C93EB0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7154D0DB1EC98D7A00C93EB0 /* UserTableViewController.swift */; };
+		71EA05BD1ECAE00E00C250C2 /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA05BC1ECAE00E00C250C2 /* PostImageViewController.swift */; };
 		FFB390F8A6E699266D647985 /* Pods_SocialGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF72136295AFE2887C728EEC /* Pods_SocialGram.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		711CCF0C1EB2F70000A24E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		711CCF0E1EB2F70000A24E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7154D0DB1EC98D7A00C93EB0 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		71EA05BC1ECAE00E00C250C2 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
 		A23A6CBCE0DA4CA606FC1BDA /* Pods-SocialGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGram/Pods-SocialGram.release.xcconfig"; sourceTree = "<group>"; };
 		BF72136295AFE2887C728EEC /* Pods_SocialGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				711CCF041EB2F70000A24E85 /* ViewController.swift */,
 				7154D0DB1EC98D7A00C93EB0 /* UserTableViewController.swift */,
 				711CCF061EB2F70000A24E85 /* Main.storyboard */,
+				71EA05BC1ECAE00E00C250C2 /* PostImageViewController.swift */,
 				711CCF091EB2F70000A24E85 /* Assets.xcassets */,
 				711CCF0B1EB2F70000A24E85 /* LaunchScreen.storyboard */,
 				711CCF0E1EB2F70000A24E85 /* Info.plist */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EA05BD1ECAE00E00C250C2 /* PostImageViewController.swift in Sources */,
 				711CCF051EB2F70000A24E85 /* ViewController.swift in Sources */,
 				7154D0DC1EC98D7A00C93EB0 /* UserTableViewController.swift in Sources */,
 				711CCF031EB2F70000A24E85 /* AppDelegate.swift in Sources */,
