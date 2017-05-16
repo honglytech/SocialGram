@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,11 +34,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="8ZH-sN-nAd">
-                        <barButtonItem key="leftBarButtonItem" title="Post" id="JkH-km-4dF">
-                            <connections>
-                                <segue destination="QQk-mQ-fma" kind="show" id="LSC-ME-L5m"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Post" id="JkH-km-4dF">
+                                <connections>
+                                    <segue destination="QQk-mQ-fma" kind="show" id="LSC-ME-L5m"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Feed" id="MGx-Yt-Hd5">
+                                <connections>
+                                    <segue destination="iTS-Dq-3V0" kind="show" id="e1B-fO-v38"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="AM6-a9-jhJ">
                             <connections>
                                 <action selector="logout:" destination="rJZ-o9-9gD" id="Ad5-sK-Ji3"/>
@@ -103,6 +111,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfm-wP-Ycm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104.375" y="-91.901408450704224"/>
+        </scene>
+        <!--New Feed-->
+        <scene sceneID="jNv-c8-Btk">
+            <objects>
+                <tableViewController title="New Feed" id="iTS-Dq-3V0" customClass="FeedTableViewController" customModule="SocialGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="248" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tra-z2-27Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="248" id="L1r-l8-rs7" customClass="FeedTableViewCell" customModule="SocialGram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="248"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L1r-l8-rs7" id="RCs-e7-46D">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="248"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFZ-cX-BKU">
+                                            <rect key="frame" x="8" y="158" width="304" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-1U-eax">
+                                            <rect key="frame" x="8" y="183" width="304" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ot6-IA-T6j">
+                                            <rect key="frame" x="49" y="8" width="222" height="148"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="pIE-1U-eax" id="V0w-Wr-b1Y"/>
+                                    <outlet property="postedImage" destination="Ot6-IA-T6j" id="eDs-Z6-jhR"/>
+                                    <outlet property="usernameLabel" destination="VFZ-cX-BKU" id="HTn-cf-YjM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iTS-Dq-3V0" id="icU-xl-Srw"/>
+                            <outlet property="delegate" destination="iTS-Dq-3V0" id="vc8-dL-zuW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pH-eE-wZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102.5" y="-871.47887323943667"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LCf-BC-gkC">
