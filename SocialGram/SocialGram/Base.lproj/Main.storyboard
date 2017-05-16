@@ -9,6 +9,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Users-->
+        <scene sceneID="OFp-rh-DyT">
+            <objects>
+                <tableViewController id="rJZ-o9-9gD" customClass="UserTableViewController" customModule="SocialGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wwI-Q2-Yt3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="CAd-PN-ILt">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CAd-PN-ILt" id="NhJ-ve-PTw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rJZ-o9-9gD" id="aVa-Bv-ZHY"/>
+                            <outlet property="delegate" destination="rJZ-o9-9gD" id="n5s-q8-e6P"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Users" id="8ZH-sN-nAd">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="AM6-a9-jhJ">
+                            <connections>
+                                <action selector="logout:" destination="rJZ-o9-9gD" id="Ad5-sK-Ji3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="zaf-2c-gsg" kind="show" identifier="logoutSegue" id="5bx-nN-U6o"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aP-tg-oNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="199" y="-91"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LCf-BC-gkC">
+            <objects>
+                <navigationController id="ouM-28-9RF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T1D-y2-5H9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rJZ-o9-9gD" kind="relationship" relationship="rootViewController" id="XVS-BP-J1E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lY-Ob-Sfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1028" y="-90"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="jeL-4B-GAB">
             <objects>
@@ -74,11 +128,12 @@
                         <outlet property="passwordTextField" destination="or9-SI-Xnj" id="Blf-9P-8YN"/>
                         <outlet property="signupOrLogin" destination="wsB-d8-hMd" id="wxN-e4-Y0l"/>
                         <outlet property="switchSingupMode" destination="FRl-Jv-6dP" id="WYx-wY-Jmu"/>
+                        <segue destination="ouM-28-9RF" kind="show" identifier="UserTable" id="aeD-cs-1Bj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNt-9z-tZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-712.5" y="123.59154929577466"/>
+            <point key="canvasLocation" x="-336" y="-904"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -137,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-269" y="123"/>
+            <point key="canvasLocation" x="-338" y="709"/>
         </scene>
     </scenes>
 </document>

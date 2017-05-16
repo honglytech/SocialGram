@@ -117,6 +117,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                         // New user is signed up
                         print("user signed up")
                         
+                        // Show user table after user has signed up
+                        self.performSegue(withIdentifier: "UserTable", sender: self)
+                        
                     }
                     
                     
@@ -150,6 +153,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     } else {
                         
                         print("Successfully logged in")
+                        
+                        // Showo user table when user has successfully logged in
+                        self.performSegue(withIdentifier: "UserTable", sender: self)
                         
                     }
                 })
@@ -279,6 +285,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         // Enable user interaction to use the app again
         //UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
+    
+    // When user is already logged in, then jumps to user table directly
+    override func viewDidAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            performSegue(withIdentifier: "UserTable", sender: self)
+        }
+        
+        // Hides navigation bar
+        self.navigationController?.navigationBar.isHidden = true
     }
     
  
