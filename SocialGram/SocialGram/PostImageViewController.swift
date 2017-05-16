@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class PostImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     @IBOutlet weak var imgPost: UIImageView!
     @IBOutlet weak var msgTextField: UITextField!
     
@@ -58,6 +58,10 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     @IBAction func postImage(_ sender: Any) {
+        
+        // Stop other activities or user interact in the app
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         // Location to store the images on Server
         let post = PFObject(className: "Posts")
         
