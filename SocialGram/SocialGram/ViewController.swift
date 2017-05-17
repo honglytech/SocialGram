@@ -24,7 +24,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var signupOrLogin: UIButton!
     
-    @IBOutlet weak var switchSingupMode: UIButton!
+    @IBOutlet weak var switchSignupMode: UIButton!
     
     // Alert function
     func alert(title: String, message: String) {
@@ -169,7 +169,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             // Change to login mode
             signupOrLogin.setTitle("Log In", for: [])
             
-            switchSingupMode.setTitle("Sign Up", for: [])
+            switchSignupMode.setTitle("Sign Up", for: [])
             
             MessageLabel.text = "Not having an account?"
             
@@ -180,7 +180,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             // Change to signup mode
             signupOrLogin.setTitle("Sign Up", for: [])
             
-            switchSingupMode.setTitle("Log In", for: [])
+            switchSignupMode.setTitle("Log In", for: [])
             
             MessageLabel.text = "Already have an account?"
             
