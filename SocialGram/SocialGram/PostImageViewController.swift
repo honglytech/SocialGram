@@ -8,11 +8,15 @@
 
 import UIKit
 import Parse
+import AVFoundation
 
 class PostImageViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imgPost: UIImageView!
     @IBOutlet weak var msgTextField: UITextField!
+    
+    var soundPlayer: AVAudioPlayer?
+    var elapsedTime: TimeInterval = 0
     
     @IBAction func selectAnImage(_ sender: Any) {
         
@@ -104,13 +108,56 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    // Play or resume music button
+    @IBAction func playMusic(_ sender: UIButton) {
+        // play and resume
+        if soundPlayer != nil{
+            soundPlayer!.currentTime = elapsedTime
+            soundPlayer!.play()
+        }
+    }
     
+    // Pause music button
+    @IBAction func pauseMusic(_ sender: UIButton) {
+        if soundPlayer != nil{
+            elapsedTime = soundPlayer!.currentTime
+            soundPlayer!.pause()
+        }
+    }
     
+    // Stop music button
+    @IBAction func stopMusic(_ sender: UIButton) {
+        if soundPlayer != nil{
+            soundPlayer!.stop()
+            elapsedTime = 0
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // URL of the Song name and type
+        let path = Bundle.main.path(forResource: "carefree", ofType: "mp3")
+        
+        // Get audio session to play in background
+        let session = AVAudioSession.sharedInstance()
+        
+        let url = URL(fileURLWithPath: path!)
+        
+        do {
+            // set up the player by loading the sound file
+            try soundPlayer = AVAudioPlayer(contentsOf: url)
+        }
+            // catch the error if playback fails
+        catch { print("file not availalbe")}
+        
+        do {
+            // Play music in background
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        }
+        catch { print("error playing music in background")}
     }
 
     override func didReceiveMemoryWarning() {
