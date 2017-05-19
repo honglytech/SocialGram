@@ -101,7 +101,7 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
                 self.msgTextField.text = ""
                 
                 // Set image back to original one
-                self.imgPost.image = UIImage(named: "user.png")
+                self.imgPost.image = UIImage(named: "socialgram.png")
                 
             }
             
@@ -155,6 +155,7 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
         
         do {
             // Play music in background
+            // This will only allow music to play in background when user locks the screen or touch the home button. However, when user switch to other segues, the music will not play. The feature that allows music to be played in the whole app will be implemented in next version. 
             try session.setCategory(AVAudioSessionCategoryPlayback)
         }
         catch { print("error playing music in background")}

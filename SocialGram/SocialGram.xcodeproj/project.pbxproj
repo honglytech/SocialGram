@@ -10,13 +10,15 @@
 		711CCF031EB2F70000A24E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711CCF021EB2F70000A24E85 /* AppDelegate.swift */; };
 		711CCF051EB2F70000A24E85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711CCF041EB2F70000A24E85 /* ViewController.swift */; };
 		711CCF081EB2F70000A24E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711CCF061EB2F70000A24E85 /* Main.storyboard */; };
-		711CCF0A1EB2F70000A24E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 711CCF091EB2F70000A24E85 /* Assets.xcassets */; };
 		711CCF0D1EB2F70000A24E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711CCF0B1EB2F70000A24E85 /* LaunchScreen.storyboard */; };
+		712ECE2C1ECEBB8300F8BDE8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712ECE2B1ECEBB8300F8BDE8 /* MapKit.framework */; };
 		7154D0DC1EC98D7A00C93EB0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7154D0DB1EC98D7A00C93EB0 /* UserTableViewController.swift */; };
+		71687DAE1ECD9B8B00DE4407 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71687DAD1ECD9B8B00DE4407 /* MapViewController.swift */; };
 		7181A0F91ECAFE6700CC4FFA /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181A0F81ECAFE6700CC4FFA /* FeedTableViewController.swift */; };
 		7181A0FB1ECB00B300CC4FFA /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181A0FA1ECB00B300CC4FFA /* FeedTableViewCell.swift */; };
 		71E086AE1ECBC916005838A8 /* carefree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71E086AD1ECBC916005838A8 /* carefree.mp3 */; };
 		71EA05BD1ECAE00E00C250C2 /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA05BC1ECAE00E00C250C2 /* PostImageViewController.swift */; };
+		71F3D92E1ECED55A00C9B933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F3D92D1ECED55A00C9B933 /* Assets.xcassets */; };
 		FFB390F8A6E699266D647985 /* Pods_SocialGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF72136295AFE2887C728EEC /* Pods_SocialGram.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,14 +28,16 @@
 		711CCF021EB2F70000A24E85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		711CCF041EB2F70000A24E85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		711CCF071EB2F70000A24E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		711CCF091EB2F70000A24E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		711CCF0C1EB2F70000A24E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		711CCF0E1EB2F70000A24E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		712ECE2B1ECEBB8300F8BDE8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7154D0DB1EC98D7A00C93EB0 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		71687DAD1ECD9B8B00DE4407 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7181A0F81ECAFE6700CC4FFA /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		7181A0FA1ECB00B300CC4FFA /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		71E086AD1ECBC916005838A8 /* carefree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = carefree.mp3; sourceTree = "<group>"; };
 		71EA05BC1ECAE00E00C250C2 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
+		71F3D92D1ECED55A00C9B933 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		A23A6CBCE0DA4CA606FC1BDA /* Pods-SocialGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGram/Pods-SocialGram.release.xcconfig"; sourceTree = "<group>"; };
 		BF72136295AFE2887C728EEC /* Pods_SocialGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712ECE2C1ECEBB8300F8BDE8 /* MapKit.framework in Frameworks */,
 				FFB390F8A6E699266D647985 /* Pods_SocialGram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,8 +83,9 @@
 				7181A0FA1ECB00B300CC4FFA /* FeedTableViewCell.swift */,
 				7181A0F81ECAFE6700CC4FFA /* FeedTableViewController.swift */,
 				71EA05BC1ECAE00E00C250C2 /* PostImageViewController.swift */,
+				71687DAD1ECD9B8B00DE4407 /* MapViewController.swift */,
 				71E086AD1ECBC916005838A8 /* carefree.mp3 */,
-				711CCF091EB2F70000A24E85 /* Assets.xcassets */,
+				71F3D92D1ECED55A00C9B933 /* Assets.xcassets */,
 				711CCF0B1EB2F70000A24E85 /* LaunchScreen.storyboard */,
 				711CCF0E1EB2F70000A24E85 /* Info.plist */,
 			);
@@ -89,6 +95,7 @@
 		7471FA12E22E0D6D8490B6C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				712ECE2B1ECEBB8300F8BDE8 /* MapKit.framework */,
 				BF72136295AFE2887C728EEC /* Pods_SocialGram.framework */,
 			);
 			name = Frameworks;
@@ -144,6 +151,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -172,8 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				711CCF0D1EB2F70000A24E85 /* LaunchScreen.storyboard in Resources */,
-				711CCF0A1EB2F70000A24E85 /* Assets.xcassets in Resources */,
 				711CCF081EB2F70000A24E85 /* Main.storyboard in Resources */,
+				71F3D92E1ECED55A00C9B933 /* Assets.xcassets in Resources */,
 				71E086AE1ECBC916005838A8 /* carefree.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +249,7 @@
 				7181A0F91ECAFE6700CC4FFA /* FeedTableViewController.swift in Sources */,
 				7154D0DC1EC98D7A00C93EB0 /* UserTableViewController.swift in Sources */,
 				711CCF031EB2F70000A24E85 /* AppDelegate.swift in Sources */,
+				71687DAE1ECD9B8B00DE4407 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

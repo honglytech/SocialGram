@@ -35,7 +35,7 @@ class UserTableViewController: UITableViewController {
             
             if error != nil {
                 
-                print(error)
+                print(error!)
                 
             }
                 // objects contain all users
@@ -122,7 +122,7 @@ class UserTableViewController: UITableViewController {
         
         refresher = UIRefreshControl()
         
-        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh") // AttributedString(string: "Pull to refresh") is now NSAttributedString(string: "Pull to refresh")
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
         
         // When refresher is activated when refresh method
         refresher.addTarget(self, action: #selector(UserTableViewController.refresh), for: UIControlEvents.valueChanged)

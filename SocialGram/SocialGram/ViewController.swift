@@ -188,20 +188,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    // When user is already logged in, then jumps to user table directly
+    
     override func viewDidAppear(_ animated: Bool) {
-        if PFUser.current() != nil {
-            performSegue(withIdentifier: "UserTable", sender: self)
-        }
-        
         // Hides navigation bar
         self.navigationController?.navigationBar.isHidden = true
     }
-    
+ 
+    func dismissKeyboard() {
+        // Ends editing on the text field by bringing the keyboard down
+        view.endEditing(true)
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Look for gesture that taps anywhere on the screen and dismiss the keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
         
     }
 

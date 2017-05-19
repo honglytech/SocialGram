@@ -18,11 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Enable storing data on Parse server
         Parse.enableLocalDatastore()
         
         let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
+            
+            // Parse server application ID
             ParseMutableClientConfiguration.applicationId = "48f6bbeeaa8703ffa44c210cb2a2d1292d520d06"
+            
+            // Parse server client key
             ParseMutableClientConfiguration.clientKey = "e3840b0f8e206d7fb168bc440efc8b8cb050402d"
+            
+            // Accessing and configuring Parse server
             ParseMutableClientConfiguration.server = "http://ec2-35-160-201-231.us-west-2.compute.amazonaws.com:80/parse"
         })
         
@@ -31,15 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //PFUser.enableAutomaticUser()
         
+        // PFACL class is used to control which users can access a particular object that each PFObject can have its own PFACL.
         let defaultACL = PFACL();
         
-        // If you would like all objects to be private by default, remove this line.
+        // Set all objects to be public
         defaultACL.getPublicReadAccess = true
         
         PFACL.setDefault(defaultACL, withAccessForCurrentUser: true)
-        
- 
-        
         
         return true
     }

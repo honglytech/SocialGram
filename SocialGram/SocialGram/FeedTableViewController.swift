@@ -49,8 +49,6 @@ class FeedTableViewController: UITableViewController {
                         self.users[user.objectId!] = user.username!
                         
                     }
-                    
-                    
                 }
                 
             }
@@ -64,10 +62,8 @@ class FeedTableViewController: UITableViewController {
                 
                 if let followers = objects {
                     
-                    for object in followers {
+                    for follower in followers {
                         
-                        if let follower = object as? PFObject {
-                            
                             // Get users that are following
                             let followedUser = follower["following"] as! String
                             
@@ -81,10 +77,8 @@ class FeedTableViewController: UITableViewController {
                                 
                                 if let posts = objects {
                                     
-                                    for object in posts {
+                                    for post in posts {
                                         
-                                        if let post = object as? PFObject {
-                                            
                                             // Retrieve messages
                                             self.messages.append(post["message"] as! String)
                                             
@@ -96,27 +90,13 @@ class FeedTableViewController: UITableViewController {
                                             
                                             // Update and reload the table
                                             self.tableView.reloadData()
-                                            
-                                        }
-                                        
                                         
                                     }
-                                    
                                 }
-                                
-                                
                             })
-                            
-                        }
-                        
-                        
                     }
-                    
                 }
-                
             })
-            
-            
         })
     }
 
