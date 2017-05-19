@@ -133,6 +133,24 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    // When keyboard shows up, the view will move up so that user can write text in text field otherwise, the keyboard will appear over the text field since the text field is in the middle of the screen so it stays behind the keyboard
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    // When keyboard disappears, the view will move down to normal screen
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -159,6 +177,12 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
             try session.setCategory(AVAudioSessionCategoryPlayback)
         }
         catch { print("error playing music in background")}
+        
+        // Call the keyboardWillShow function
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        // Call the keyboardWillHide function
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
