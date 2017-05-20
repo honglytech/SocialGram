@@ -38,7 +38,7 @@ class UserTableViewController: UITableViewController {
                 print(error!)
                 
             }
-                // objects contain all users
+            // objects contain all users
             else if let users = objects {
                 
                 // clear space in first row since usernames or userIDs are initialized with empty string

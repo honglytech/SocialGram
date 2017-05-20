@@ -53,7 +53,7 @@ class FeedTableViewController: UITableViewController {
                 
             }
             
-            let getFollowedUsersQuery = PFQuery(className: "Followers")
+            let getFollowedUsersQuery = PFQuery(className: "CFollowers")
             
             // Get all of the followers from server well. However, when there are thousands of users, the app will not handle such a large numbers of users since the codes below try to loop through each user's posts everytime. Therefore, the more users, the more time comsuing and more likely to get error since the app will loop all users' posts. 
             getFollowedUsersQuery.whereKey("follower", equalTo: (PFUser.current()?.objectId!)!)
@@ -138,7 +138,7 @@ class FeedTableViewController: UITableViewController {
         }
         
         // default image
-        cell.postedImage.image = UIImage(named: "user.png")
+        cell.postedImage.image = UIImage(named: "socialgram.png")
         
         cell.usernameLabel.text = usernames[indexPath.row]
         

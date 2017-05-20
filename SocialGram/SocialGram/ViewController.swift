@@ -161,7 +161,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    // Login function
+    // Switch between signup and login buttons 
     @IBAction func switchSignupMode(_ sender: UIButton) {
         
         if signupMode {

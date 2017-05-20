@@ -178,6 +178,7 @@ class PostImageViewController: UIViewController, UINavigationControllerDelegate,
         }
         catch { print("error playing music in background")}
         
+        
         // Call the keyboardWillShow function
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         

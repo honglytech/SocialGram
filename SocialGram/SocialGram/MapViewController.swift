@@ -40,18 +40,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             // Get location details from latitude and longitude
             let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             
+            // This is the region showing on the map with latitudeDelta and longtitudeDelta 0.02 refers how close the map will zoom in
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
             
             self.map.setRegion(region, animated: true)
- 
             
             // Clear annotations or it will appear every time user change location
             self.map.removeAnnotations(self.map.annotations)
             
+            // Adding an annotation to show where the current user is
             let annotation = MKPointAnnotation()
             
             annotation.coordinate = location
             
+            // Annotation title that allows user to show the title when the user press on the annotation pin
             annotation.title = "Your current location"
             
             self.map.addAnnotation(annotation)
